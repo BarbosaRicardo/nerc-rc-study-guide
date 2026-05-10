@@ -10,7 +10,7 @@
     background-image:
       radial-gradient(ellipse 70% 45% at 50% 100%, oklch(0.68 0.16 48 / 0.09) 0%, transparent 60%),
       radial-gradient(ellipse 55% 55% at 0% 0%, oklch(0.50 0.10 40 / 0.04) 0%, transparent 60%);
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 }
 
@@ -203,3 +203,31 @@ code:not(pre code) {
   50% { box-shadow: 0 0 24px rgba(217,119,6,0.6); }
 }
 .gif-container img { border-radius: 8px; max-height: 200px; object-fit: cover; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+
+/* ── Dark-mode color remaps (light-theme classes → dark-mode safe) ── */
+[class*="text-navy-"],
+.text-navy { color: #f1f5f9 !important; }
+
+.text-slate-700, .text-slate-800, .text-slate-900,
+.text-gray-700,  .text-gray-800,  .text-gray-900,
+.text-zinc-700,  .text-zinc-800,  .text-zinc-900,
+.text-stone-700, .text-stone-800 { color: #cbd5e1 !important; }
+
+.text-slate-600, .text-gray-600, .text-zinc-600 { color: #94a3b8 !important; }
+
+/* mblue accent → app-specific accent */
+.text-mblue-600, .text-mblue-500, .text-mblue-700,
+.text-mblue-800, .text-mblue { color: #fbbf24 !important; }
+.text-mblue-400, .text-mblue-300 { color: #fde68a !important; }
+
+/* Light bg tints */
+.bg-mblue-50  { background: rgba(251,191,36,0.08) !important; }
+.bg-mblue-100 { background: rgba(251,191,36,0.14) !important; }
+.bg-mblue-200 { background: rgba(251,191,36,0.20) !important; }
+
+/* Borders */
+.border-mblue-200 { border-color: rgba(251,191,36,0.35) !important; }
+.border-mblue-300 { border-color: rgba(251,191,36,0.50) !important; }
+
+/* Icon text in mblue containers */
+.text-mblue-600 svg, .text-mblue-500 svg { color: #fbbf24 !important; }
