@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { Menu, X, Shield, BookOpen, LayersIcon } from 'lucide-react'
+import { Menu, X, Zap, BookOpen } from 'lucide-react'
 import { CHAPTERS } from '../data/chapters'
 import { useProgress } from '../hooks/useProgress'
 
@@ -36,12 +36,12 @@ export default function Sidebar() {
       <div className="p-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 0 20px rgba(245,158,11,0.5)' }}>
-            <Shield size={18} className="text-white" />
+            style={{ background: 'linear-gradient(135deg, #b45309, #d97706)', boxShadow: '0 0 20px rgba(217,119,6,0.45)' }}>
+            <Zap size={18} className="text-white" />
           </div>
           <div>
             <div className="font-black text-white text-sm tracking-wide leading-tight">NERC RC</div>
-            <div className="text-xs font-medium" style={{ color: '#60a5fa' }}>Study Guide</div>
+            <div className="text-xs font-medium" style={{ color: '#d97706' }}>Study Guide</div>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ export default function Sidebar() {
         <div className="mt-4">
           <div className="flex justify-between text-xs mb-1.5">
             <span className="text-slate-500">Overall Progress</span>
-            <span className="font-bold" style={{ color: '#60a5fa' }}>{prog.pct}%</span>
+            <span className="font-bold" style={{ color: '#d97706' }}>{prog.pct}%</span>
           </div>
           <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
             <div className="progress-bar h-full" style={{ width: `${prog.pct}%` }} />
@@ -68,17 +68,7 @@ export default function Sidebar() {
         {CHAPTERS.map((ch) => (
           <NavItem key={ch.id} ch={ch} />
         ))}
-        <div className="pt-2 border-t mt-2" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
-          <NavLink
-            to="/flashcards"
-            onClick={() => setOpen(false)}
-            className={({ isActive }) => `chapter-nav-item ${isActive ? 'active' : ''}`}
-          >
-            <LayersIcon size={15} className="flex-shrink-0" style={{ color: '#a78bfa' }} />
-            <span className="flex-1 truncate">Flashcards</span>
-            <span className="text-xs px-1.5 py-0.5 rounded-full" style={{ color: '#a78bfa', background: 'rgba(139,92,246,0.15)', border: '1px solid rgba(139,92,246,0.3)' }}>NEW</span>
-          </NavLink>
-        </div>
+
       </nav>
 
       {/* Footer */}
@@ -89,17 +79,17 @@ export default function Sidebar() {
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full px-3 py-2.5 rounded-xl text-xs font-bold transition-all hover:scale-105"
           style={{
-            background: 'linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2))',
-            border: '1px solid rgba(59,130,246,0.35)',
-            color: '#93c5fd',
-            boxShadow: '0 0 12px rgba(59,130,246,0.15)',
+            background: 'linear-gradient(135deg, rgba(217,119,6,0.18), rgba(180,83,9,0.12))',
+            border: '1px solid rgba(217,119,6,0.35)',
+            color: '#d97706',
+            boxShadow: '0 0 12px rgba(217,119,6,0.15)',
           }}
         >
           <BookOpen size={13} />
           Download Study Guide PDF
         </a>
         <p className="text-xs text-slate-600 text-center">
-          NERC Reliability Coordinator · RC Certification Exam Prep · 2026
+          SCADA Automation Engineering · NERC RC Exam · May 2026
         </p>
       </div>
     </div>
@@ -110,7 +100,7 @@ export default function Sidebar() {
       <button
         onClick={() => setOpen(!open)}
         className="lg:hidden fixed top-4 left-4 z-50 w-10 h-10 text-white rounded-xl flex items-center justify-center shadow-lg"
-        style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}
+        style={{ background: 'linear-gradient(135deg, #b45309, #d97706)' }}
       >
         {open ? <X size={20} /> : <Menu size={20} />}
       </button>
