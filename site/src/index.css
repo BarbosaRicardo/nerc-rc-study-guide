@@ -231,3 +231,47 @@ code:not(pre code) {
 
 /* Icon text in mblue containers */
 .text-mblue-600 svg, .text-mblue-500 svg { color: #fbbf24 !important; }
+
+/* ── Light-theme backgrounds → dark surfaces ───────────────────────────
+   These pages were authored light-theme (white cards, light tint panels)
+   and the dark theme recolors text to light. Without remapping the light
+   BACKGROUNDS too, that light text lands on a white box (white-on-white).
+   Remap every light surface to a dark one so the forced-light text reads. */
+.bg-white,
+.bg-slate-50, .bg-slate-100,
+.bg-gray-50,  .bg-gray-100,
+.bg-zinc-50,  .bg-zinc-100,
+.bg-stone-50, .bg-stone-100,
+.bg-neutral-50, .bg-neutral-100 { background-color: rgba(217,119,6,0.05) !important; }
+
+/* Colored tint panels (…-50/100/200) → faint colored-on-dark */
+.bg-red-50,   .bg-red-100,   .bg-red-200   { background-color: rgba(239,68,68,0.10) !important; }
+.bg-rose-50,  .bg-rose-100                 { background-color: rgba(244,63,94,0.10) !important; }
+.bg-orange-50,.bg-orange-100               { background-color: rgba(249,115,22,0.10) !important; }
+.bg-amber-50, .bg-amber-100, .bg-yellow-50 { background-color: rgba(217,119,6,0.12) !important; }
+.bg-green-50, .bg-emerald-50, .bg-teal-50  { background-color: rgba(16,185,129,0.10) !important; }
+.bg-blue-50,  .bg-blue-100, .bg-sky-50     { background-color: rgba(59,130,246,0.10) !important; }
+.bg-indigo-50,.bg-indigo-100               { background-color: rgba(99,102,241,0.10) !important; }
+.bg-purple-50,.bg-violet-50                { background-color: rgba(168,85,247,0.10) !important; }
+.bg-cyan-50                                { background-color: rgba(6,182,212,0.10) !important; }
+
+/* Light borders → subtle dark-theme borders */
+.border-slate-200, .border-slate-300,
+.border-gray-200,  .border-gray-300,
+.border-zinc-200,  .border-stone-200 { border-color: rgba(217,119,6,0.14) !important; }
+.border-red-200,   .border-red-300   { border-color: rgba(239,68,68,0.30) !important; }
+.border-blue-200,  .border-blue-300  { border-color: rgba(59,130,246,0.30) !important; }
+.border-amber-200, .border-amber-300 { border-color: rgba(217,119,6,0.30) !important; }
+.border-green-200, .border-emerald-200 { border-color: rgba(16,185,129,0.30) !important; }
+
+/* Dark colored text (…-600/700/800/900) → lighter, readable on dark */
+.text-red-600, .text-red-700, .text-red-800, .text-red-900 { color: #fca5a5 !important; }
+.text-orange-600, .text-orange-700, .text-orange-800, .text-orange-900 { color: #fdba74 !important; }
+.text-amber-600, .text-amber-700, .text-amber-800, .text-amber-900 { color: #fcd34d !important; }
+.text-green-600, .text-green-700, .text-green-800, .text-green-900,
+.text-emerald-600, .text-emerald-700, .text-emerald-800 { color: #6ee7b7 !important; }
+.text-blue-600, .text-blue-700, .text-blue-800, .text-blue-900,
+.text-sky-600, .text-sky-700 { color: #93c5fd !important; }
+.text-indigo-600, .text-indigo-700, .text-indigo-800, .text-indigo-900 { color: #a5b4fc !important; }
+.text-purple-600, .text-purple-700, .text-purple-800, .text-purple-900,
+.text-violet-700, .text-violet-800 { color: #d8b4fe !important; }
